@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LegalMind")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b928f597105ec57ba56898e07bbba64f8f274ceb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d74c877326c54641a65ec53ad7a4644232650b62")]
 [assembly: System.Reflection.AssemblyProductAttribute("LegalMind")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LegalMind")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
