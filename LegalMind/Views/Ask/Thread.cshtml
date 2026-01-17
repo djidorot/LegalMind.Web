@@ -1,0 +1,25 @@
+@model LegalMind.Web.Domain.Entities.ChatThread
+@{
+    ViewData["Title"] = Model.Title;
+}
+<link rel="stylesheet" href="~/css/legalskin.css" />
+
+<div class="lm-page">
+    <div class="lm-row lm-between">
+        <h1>@Model.Title</h1>
+        <a class="lm-link" href="/Ask">New question</a>
+    </div>
+
+    <div class="lm-card">
+        <div class="lm-muted lm-small">Jurisdiction: <strong>@Model.Jurisdiction</strong></div>
+        <hr class="lm-hr" />
+
+        @foreach (var msg in Model.Messages.OrderBy(m => m.CreatedUtc))
+        {
+            <div class="lm-msg @(msg.Role == "assistant" ? "lm-assistant" : "lm-user")">
+                <div class="lm-msg-role">@msg.Role</div>
+                <pre class="lm-msg-text">@msg.Content</pre>
+            </div>
+        }
+    </div>
+</div>

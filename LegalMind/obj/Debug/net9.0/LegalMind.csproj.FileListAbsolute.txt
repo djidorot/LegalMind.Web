@@ -1,0 +1,9 @@
+/Users/djidorot/Downloads/LegalMind.Web/LegalMind/obj/Debug/net9.0/rpswa.dswa.cache.json
+/Users/djidorot/Downloads/LegalMind.Web/LegalMind/obj/Debug/net9.0/LegalMind.GeneratedMSBuildEditorConfig.editorconfig
+/Users/djidorot/Downloads/LegalMind.Web/LegalMind/obj/Debug/net9.0/LegalMind.AssemblyInfoInputs.cache
+/Users/djidorot/Downloads/LegalMind.Web/LegalMind/obj/Debug/net9.0/LegalMind.AssemblyInfo.cs
+/Users/djidorot/Downloads/LegalMind.Web/LegalMind/obj/Debug/net9.0/LegalMind.csproj.CoreCompileInputs.cache
+/Users/djidorot/Downloads/LegalMind.Web/LegalMind/obj/Debug/net9.0/LegalMind.MvcApplicationPartsAssemblyInfo.cache
+/Users/djidorot/Downloads/LegalMind.Web/LegalMind/obj/Debug/net9.0/LegalMind.RazorAssemblyInfo.cache
+/Users/djidorot/Downloads/LegalMind.Web/LegalMind/obj/Debug/net9.0/LegalMind.RazorAssemblyInfo.cs
+/Users/djidorot/Downloads/LegalMind.Web/LegalMind/obj/Debug/net9.0/LegalMind.sourcelink.json

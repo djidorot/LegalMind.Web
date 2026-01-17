@@ -1,0 +1,25 @@
+@{
+    ViewData["Title"] = "Ask LegalMind";
+}
+<link rel="stylesheet" href="~/css/legalskin.css" />
+
+<div class="lm-page">
+    <h1>Ask LegalMind</h1>
+    <div class="lm-card">
+        <form method="post" asp-action="Ask">
+            @Html.AntiForgeryToken()
+
+            <label class="lm-label">Jurisdiction</label>
+            <input class="lm-input" name="jurisdiction" value="PH" placeholder="e.g., PH, PH-NCR, US-CA" />
+
+            <label class="lm-label">Your question</label>
+            <textarea class="lm-textarea" name="question" rows="5"
+                      placeholder="Describe your situation briefly..."></textarea>
+
+            <div class="lm-row">
+                <button class="lm-btn" type="submit">Get guidance</button>
+                <span class="lm-muted lm-small">Informational only — not legal advice.</span>
+            </div>
+        </form>
+    </div>
+</div>
