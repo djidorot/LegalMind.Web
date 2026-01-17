@@ -1,0 +1,75 @@
+@model LegalMind.Web.Models.DashboardViewModel
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/dashboard.css" asp-append-version="true" />
+}
+
+<div class="lm-dash">
+    <div class="lm-dash__header">
+        <div>
+            <h1 class="lm-dash__title">Your Dashboard</h1>
+            <p class="lm-dash__subtitle">
+                Welcome back@(string.IsNullOrWhiteSpace(Model.DisplayName) ? "" : $", {Model.DisplayName}") 👋
+            </p>
+        </div>
+        <div class="lm-dash__actions">
+            <a class="btn btn-primary" asp-controller="Ask" asp-action="Index">Ask a question</a>
+        </div>
+    </div>
+
+    <div class="lm-dash__grid">
+        <div class="lm-card">
+            <div class="lm-card__head">
+                <h2 class="lm-card__title">Quick start</h2>
+                <span class="lm-badge">MVP</span>
+            </div>
+            <p class="lm-card__text">Create a new thread and get an answer backed by your saved sources.</p>
+            <div class="lm-card__buttons">
+                <a class="btn btn-outline-primary" asp-controller="Ask" asp-action="Index">New question</a>
+                <a class="btn btn-outline-secondary" asp-controller="Admin" asp-action="Index">Admin</a>
+            </div>
+        </div>
+
+        <div class="lm-card">
+            <div class="lm-card__head">
+                <h2 class="lm-card__title">Recent threads</h2>
+                <span class="lm-meta">Last 12</span>
+            </div>
+
+            @if (Model.RecentThreads.Count == 0)
+            {
+                <div class="lm-empty">
+                    <div class="lm-empty__title">No threads yet</div>
+                    <div class="lm-empty__text">Start by asking your first question.</div>
+                    <a class="btn btn-primary" asp-controller="Ask" asp-action="Index">Ask now</a>
+                </div>
+            }
+            else
+            {
+                <div class="lm-threadlist">
+                    @foreach (var t in Model.RecentThreads)
+                    {
+                        <a class="lm-thread" asp-controller="Ask" asp-action="Thread" asp-route-id="@t.ThreadId">
+                            <div class="lm-thread__main">
+                                <div class="lm-thread__title">@(string.IsNullOrWhiteSpace(t.Title) ? "Untitled" : t.Title)</div>
+                                <div class="lm-thread__sub">
+                                    <span class="lm-pill">@t.Jurisdiction</span>
+                                    <span class="lm-dot">•</span>
+                                    <span class="lm-muted">@t.MessageCount message@(t.MessageCount == 1 ? "" : "s")</span>
+                                </div>
+                            </div>
+                            <div class="lm-thread__time" title="@t.CreatedUtc.ToString("u")">@t.CreatedUtc.ToLocalTime().ToString("MMM d, yyyy")</div>
+                        </a>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/dashboard.js" asp-append-version="true"></script>
+}

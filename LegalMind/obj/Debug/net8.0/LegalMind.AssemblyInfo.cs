@@ -11,10 +11,11 @@ using System;
 using System.Reflection;
 
 [assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("667da2a2-9092-4eb1-b276-2cd07d900210")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("LegalMind")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+56fe88e0ad0fcb8f9eb4196355cbff6ba3193d79")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7b34cff47b285d5151badf1e597ec4cad2ab128b")]
 [assembly: System.Reflection.AssemblyProductAttribute("LegalMind")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LegalMind")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
