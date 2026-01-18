@@ -8,10 +8,25 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/legalskin.css" asp-append-version="true" />
+    @* Role-scoped assets so UI changes can be isolated per role *@
+    @if (User?.Identity?.IsAuthenticated ?? false)
+    {
+        <link rel="stylesheet" href="~/css/roles/user.css" asp-append-version="true" />
+    }
+    @if (User?.IsInRole("Admin") ?? false)
+    {
+        <link rel="stylesheet" href="~/css/roles/admin.css" asp-append-version="true" />
+    }
     <link rel="stylesheet" href="~/LegalMind.styles.css" asp-append-version="true" />
     @await RenderSectionAsync("Styles", required: false)
 </head>
-<body>
+@{
+    // Used for role-scoped styling/hooks without breaking Razor parsing in HTML attributes
+    var lmRole = (User?.IsInRole("Admin") ?? false)
+        ? "admin"
+        : ((User?.Identity?.IsAuthenticated ?? false) ? "user" : "anonymous");
+}
+<body data-lm-role="@lmRole">
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
@@ -33,9 +48,12 @@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Ask" asp-action="Index">Ask</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Index">Admin</a>
-                            </li>
+                            @if (User?.IsInRole("Admin") ?? false)
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Index">Admin</a>
+                                </li>
+                            }
                         }
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
@@ -60,6 +78,14 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    @if (User?.Identity?.IsAuthenticated ?? false)
+    {
+        <script src="~/js/roles/user.js" asp-append-version="true"></script>
+    }
+    @if (User?.IsInRole("Admin") ?? false)
+    {
+        <script src="~/js/roles/admin.js" asp-append-version="true"></script>
+    }
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

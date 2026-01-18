@@ -1,0 +1,12 @@
+/* Role-scoped styles (Admin)
+   Put admin-only UI tweaks here so user styling remains isolated.
+*/
+
+:root {
+  --lm-admin-accent: #6610f2;
+}
+
+/* Visual hint for admin pages */
+body[data-lm-role="admin"] .navbar {
+  box-shadow: 0 0.25rem 0.75rem rgba(102, 16, 242, 0.12);
+}

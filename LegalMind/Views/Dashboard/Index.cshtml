@@ -29,7 +29,10 @@
             <p class="lm-card__text">Create a new thread and get an answer backed by your saved sources.</p>
             <div class="lm-card__buttons">
                 <a class="btn btn-outline-primary" asp-controller="Ask" asp-action="Index">New question</a>
-                <a class="btn btn-outline-secondary" asp-controller="Admin" asp-action="Index">Admin</a>
+                @if (User?.IsInRole("Admin") ?? false)
+                {
+                    <a class="btn btn-outline-secondary" asp-controller="Admin" asp-action="Index">Admin</a>
+                }
             </div>
         </div>
 

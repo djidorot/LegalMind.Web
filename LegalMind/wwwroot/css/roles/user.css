@@ -1,0 +1,10 @@
+/* Role-scoped styles (User)
+   Put user-only UI tweaks here so Admin styling remains isolated.
+*/
+
+:root {
+  --lm-role-accent: #0d6efd;
+}
+
+/* Small helper utilities */
+.lm-hidden { display: none !important; }

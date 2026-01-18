@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace LegalMind.Web.Controllers;
 
-[Authorize]
+[Authorize(Roles = "Admin")]
 public class AdminController : Controller
 {
     public IActionResult Index() => View();

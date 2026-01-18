@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LegalMind")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f4d514806b9f6a2072fbbef4a09b37396945cc00")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+abbded336f571edc59cc372f1f8456c2388d2826")]
 [assembly: System.Reflection.AssemblyProductAttribute("LegalMind")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LegalMind")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
